@@ -18,7 +18,7 @@
     <body>
         <header>
 
-            <img  src="./images/Logo_oficial.svg" onclick="mudarTela(document.getElementById('main'), 'main')" alt="icon festum"  width="5%" >
+            <img  src="./images/Logo_oficial.svg" onclick="mudarTela(document.getElementById('main'), 'main')" alt="icon festum"  width="5%" cursor:"pointer">
 
         </header>
         <nav>
@@ -32,7 +32,12 @@
         </section>
         <main id="main">
             <aside>
-                aside
+                <select name="filtro" id="selectFiltro" >
+                    <option value="Azul">Azul</option>
+                    <option value="Verde">Verde</option>
+                    <option value="Rosa">Rosa</option>
+                    <option value="Laranja">laranja</option>
+                </select>
             </aside>
             <article>
                 <div class="produto" style="border: 3px solid #037AD5;">

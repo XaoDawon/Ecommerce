@@ -1,25 +1,25 @@
 <?php
     include('cabecalho.php');
-    echo"<center><br><br>";
+    echo"";
     echo"
+    <main id='registro'>
+            <h2 style='color: #d326da;'>Registro</h2>
+            <div>
         <form method ='post' action=''>
-        <label for=''>Cadastro de Usuários</label><br><br>
 
-        <label for='nome'>Nome:</label>
-        <input type='text' name='nome'><br><br>
-
-        <label for='email'>Email:</label>
-        <input type='text' name='email'><br><br> 
-
-        <label for='senha'>Senha:</label>
-        <input type='text' name='senha'><br><br>
-
-        <label for='telefone'>Telefone:</label>
-        <input type='text' name='telefone'><br><br>
+        <input type='text' name='nome' placeholder='Digite seu nome'><br>
 
 
-        <input type='submit' value='Salvar'>
-        </form>";
+        <input type='text' name='email' placeholder='Digite seu nome'><br> 
+
+        <input type='text' name='senha' placeholder='Digite sua senha'><br>
+        <input type='text'  name='telefone' placeholder='Digite seu telefone'><br><br>
+
+        <input type='submit' id='submit' value='Salvar'>
+        </form>
+        </div>
+        </main>";
+        include('b');
 
         if($_POST){
             include("util.php");

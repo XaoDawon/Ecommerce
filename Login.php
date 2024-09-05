@@ -1,21 +1,25 @@
+
+
+
 <?php
 include('cabecalho.php');
 include('util.php');
 
-echo"<center><br><br>";
     echo"
+        <main id='login'>
+        <h2 style='color: #d326da;'>Login</h2>
+        <div>
         <form method ='post' action=''>
-        <label for=''>Login</label><br><br>
 
-        <label for='email'>Email:</label>
-        <input type='text' name='email'><br><br> 
+        <input type='text' id='email' name='email' placeholder='Digite seu email'><br><br> 
 
-        <label for='senha'>Senha:</label>
-        <input type='text' name='senha'><br><br>
+        <input type='text' id='senha' name='senha' placeholder='Digite sua senha'><br><br>
 
-        <input type='submit' value='Salvar'>
-        </form>";
-
+        <input type='submit' id='submit' value='Salvar'>
+        </form>
+        </div>
+        </main>";
+        include('rodape.php');
     if($_POST){
         $email = $_POST['email'];
         $senha = $_POST['senha'];
@@ -48,5 +52,6 @@ echo"<center><br><br>";
             echo"<br><p class=C>Não foi possível conectar</p>";
         }
         header("location: index.php");
+        
     }
 ?>

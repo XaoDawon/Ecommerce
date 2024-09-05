@@ -1,18 +1,26 @@
+
 <?php 
     include('cabecalho.php'); 
     include('util.php');
 ?>
-<section>
-    <img src="./images/sec.jpg" style="width: 80%;" alt="Imagem do Produto">
-</section>
 <main id="main">
     <aside>
 <?php
     $conn = conecta();
     echo"
-        <form method='GET' action=''>
-        <input type='text' id='filtroCor' name='filtro' placeholder='Filtrar'><br>
-        <button type='submit' id='btEnviar'>Enviar</button>";
+        <img src='./images/3 ponto.png' width='40px'>
+        <div id='divFiltro'>
+            <form method='GET' action=''>
+            <select name='filtro' id='selectFiltro' >
+                        <option value='' selected>todos</option>
+                        <option value='Azul'>Azul</option>
+                        <option value='Verde'>Verde</option>
+                        <option value='Rosa'>Rosa</option>
+                        <option value='Laranja'>laranja</option>
+            </select>
+            <button type='submit' id='btEnviar'>Enviar</button>
+        </div>
+        ";
         echo"</aside>";
     $filtro = 0;
     if($_GET){
@@ -40,8 +48,7 @@
                         <img src='./images/copo ".$linha['cor']." normal.jpg' width='34%'>
                         <div>
                             <h3>".$linha['nome']."</h3>
-                            <h3 id='preco''>R$".$linha['valor_unitario']."</h3>
-                            <p  >".$linha['descricao']."</p>
+                            <h3 style='color: rgb(14,153,2);'>R$".$linha['valor_unitario']."</h3>
                         </div>
                     </div>
                 
@@ -64,8 +71,7 @@
                         <img src='./images/copo ".$linha['cor']." normal.jpg' width='34%'>
                         <div>
                             <h3>".$linha['nome']."</h3>
-                            <h3 id='preco'>R$".$linha['valor_unitario']."</h3>
-                            <p>".$linha['descricao']."</p>
+                            <h3 style='color: rgb(14,153,2);'>R$".$linha['valor_unitario']."</h3>
                         </div>
                     </div>
                 
