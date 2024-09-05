@@ -12,7 +12,19 @@ article{
 }
 aside{
     padding: 0.8vw;
+    position: relative;
 }
+aside
+#imgAside{
+
+    position: absolute;
+
+}
+#selectFiltro{
+    color: aliceblue;
+    background-color: rgb(56, 56, 56);
+}
+
 button{
     border: 1px solid #81013f;
     display: flex;

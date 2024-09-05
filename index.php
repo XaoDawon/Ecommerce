@@ -8,17 +8,17 @@
 <?php
     $conn = conecta();
     echo"
-        <img src='./images/3 ponto.png' width='40px'>
+        <img id='imgAside' src='./images/3 ponto.png' width='40px'>
         <div id='divFiltro'>
             <form method='GET' action=''>
             <select name='filtro' id='selectFiltro' >
-                        <option value='' selected>todos</option>
+                        <option value=''>Todos</option>
                         <option value='Azul'>Azul</option>
                         <option value='Verde'>Verde</option>
                         <option value='Rosa'>Rosa</option>
                         <option value='Laranja'>laranja</option>
+                        <option value='vazio' selected>  </option>
             </select>
-            <button type='submit' id='btEnviar'>Enviar</button>
         </div>
         ";
         echo"</aside>";

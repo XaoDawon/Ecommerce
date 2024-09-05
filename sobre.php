@@ -23,5 +23,5 @@
     </p>                          
 </main>
 <?php
-    include"rodape";
+    include"rodape.php";
 ?>

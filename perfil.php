@@ -4,13 +4,12 @@
     $nula=NULL;
     echo"<br><br><p class=C>Meu perfil</p>";
     $conn = conecta();
-    $id_user = $_GET['id'];
     $varSQL = "SELECT nome, email, telefone, senha, admin
                 FROM usuario
                 WHERE id_usuario = :id_usuario";
 
     $select = $conn->prepare($varSQL);
-    $select->bindParam(':id_usuario', $id_user);
+    $select->bindParam(':id_usuario', $usuario);
     $select->execute();
     echo"<center><table border=3px></center><th>Nome</th><th>Email</th><th>Telefone</th><th>Senha</th><th>Alterar Dados</th><th>Excluir Dados</th>";
     while($linha = $select->fetch())
@@ -29,11 +28,11 @@
         echo $linha["senha"] ;
         echo"</td>";
         echo"<td>";
-        echo "<a href='AlterarUsuarios.php?id=".$id_user."&idprincipal=".$nula."'>Alterar dados</a>";
+        echo "<a href='AlterarUsuarios.php?id=".$usuario."&idprincipal=".$nula."'>Alterar dados</a>";
         echo"</td>";
 
         echo"<td>";
-        echo "<a href='ExcluirUsuarios.php?id=".$id_user."&idprincipal=".$nula."'>Excluir dados</a>";
+        echo "<a href='ExcluirUsuarios.php?id=".$usuario."&idprincipal=".$nula."'>Excluir dados</a>";
         echo"</td>";
 
         echo"</tr>";
@@ -43,7 +42,7 @@
     echo"</table>";
     if($adm){
         echo"<br><br><p class=C>Login administrativo</p>";
-        echo"<p class=C><a href='usuarios.php?id=".$id_user."'>Usuários</a> <a href='produtos.php?id=".$id_user."'>Produtos</a></p>";
+        echo"<p class=C><a href='usuarios.php?id=".$usuario."'>Usuários</a> <a href='produtos.php?id=".$usuario."'>Produtos</a></p>";
     }
     echo"<br><br><p class=C><a href='logout.php'>Logout</a></p>";
    

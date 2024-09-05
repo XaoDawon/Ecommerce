@@ -35,7 +35,7 @@
             }
             if($sessaoConectado){
                 $idSessao = session_id();
-                echo"<button onclick='mudarTela(4,$usuario)'>Perfil</button>
+                echo"<button onclick='mudarTela(4)'>Perfil</button>
                     <button onclick='mudarTela(5,null)'>Logout</button>
                 ";
             }
@@ -70,6 +70,4 @@
         <section>
         <img src="./images/sec.jpg" style="width: 80%;" alt="Imagem do Produto">
         </section>
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> 
-        <script src='./js/index.js'></script>
-        
+
