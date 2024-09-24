@@ -36,3 +36,4 @@ function btnComprar(conn, idProduto){
         window.open("login.php", "_self");
     }
 }
+//contritus
