@@ -52,4 +52,7 @@
     emails repetidos, assim permitindo pegar o id do usuario cadastrado (criado automaticamente no banco) com base nesse email. Depois do teste se insere os dados e usa um "select idusuario from usuario where email =
     emailinserido. Assim tem o teste de consistência para não repetir o email onde só permite o cadastro se o select voltar nulo, e estipulando que o email não se repita
     vc pode usá-lo para pegar o id referente a esse email gerado automaticamente pelo banco*/
+
+    include("rodape.php");
+
 ?>
