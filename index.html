@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Satisfy&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Festum</title>
+        
+    </head>
+    <body>
+        <header>
+
+            <img  src="./images/Logo_oficial.svg" onclick="mudarTela(document.getElementById('main'), 'main')" alt="icon festum"  width="5%" cursor:"pointer">
+
+        </header>
+        <nav>
+            <button onclick="mudarTela(document.getElementById('sobre'), 'sobre')" id="aboutLink">Sobre </button>
+            <button  onclick="mudarTela(document.getElementById('login'), 'login')" id="loginLink">Login</button>
+            <button  onclick="mudarTela(document.getElementById('registro'), 'registro')"  id="registerLink">Registro</button>
+            <button  onclick="mudarTela(document.getElementById('carrinho'), 'carrinho')"  id="carrinhoLink">Carrinho</button>
+        </nav>
+        <section>
+            <img src="./images/sec.jpg" style="width: 80%;" alt="Imagem do Produto">
+        </section>
+        <!--<main id="main">
+            <aside>
+                <select name="filtro" id="selectFiltro" >
+                    <option value="Azul">Azul</option>
+                    <option value="Verde">Verde</option>
+                    <option value="Rosa">Rosa</option>
+                    <option value="Laranja">laranja</option>
+                </select>
+            </aside>
+            <article>
+                <div class="produto" style="border: 3px solid #037AD5;">
+                    <img src="./images/copo azul normal.jpg" alt="" width="34%">
+                    <div>
+                        <h3 style="color: #037AD5;">copo azul</h3>
+                        <h3 style="color: rgb(14,153,2) ;">R$ 7,00</h3>
+                        <p style="color: rgb(124, 194, 255);">Um copo de plástico azul neon, de cor vibrante, possui uma superfície lisa e brilhante. É leve, durável e ideal para festas e eventos.</p>
+                    </div>
+                </div>
+                <div class="produto" style="border: 3px solid #77C651;">
+                    <img src="./images/copo verde normal.jpg" alt="" width="34%">
+                    <div>
+                        <h3 style="color: #77C651;">copo verde</h3>
+                        <h3 style="color: rgb(14,153,2);">R$ 7,00</h3>
+                        <p style="color: rgb(94, 255, 174);">Um copo de plástico verde neon, de cor vibrante, possui uma superfície lisa e brilhante. É leve, durável e ideal para festas e eventos.</p>
+                    </div>
+                </div>
+                <div class="produto" style="border: 3px solid #F48D42;">
+                    <img src="./images/copo laranja normal.jpg" alt="" width="34%">
+                    <div>
+                        <h3 style="color: #F48D42;">copo laranja</h3>
+                        <h3 style="color: rgb(14,153,2);">R$ 7,00</h3>
+                        <p style="color: rgb(255, 176, 85);">Um copo de plástico laranja neon, de cor vibrante, possui uma superfície lisa e brilhante. É leve, durável e ideal para festas e eventos.</p>
+                    </div>
+                </div>
+                <div class="produto" style="border: 3px solid #FA83A0;">
+                    <img src="./images/copo rosa normal.jpg" alt="" width="34%">
+                    <div>
+                        <h3 style="color: #FA83A0;">copo rosa</h3>
+                        <h3 style="color: rgb(14,153,2);">R$ 7,00</h3>
+                        <p style="color: rgb(249, 80, 255);">Um copo de plástico rosa neon, de cor vibrante, possui uma superfície lisa e brilhante. É leve, durável e ideal para festas e eventos.</p>
+                    </div>
+                </div>
+                
+            </article>
+        </main>-->
+        <!--<main id="sobre">
+            <h2 style="color: #d326da;">Sobre</h2><br>
+            <p style="color: #ade0e1;">&nbsp;&nbsp; Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet incidunt rem quaerat laudantium magni molestias, ducimus sint aut atque totam earum perferendis distinctio sapiente? Quaerat, suscipit! Illum voluptatibus dolores tempora?</p>
+        </main>-->
+        <main class="modificamentos">
+            <div id="centerDivModificamentos">
+                <p class="pModificamentos" id="pUsuario"><span >Jefferson</span></p>
+                <p class="pModificamentos">Email&nbsp;<span >20comer70correr@gmail.com</span></p>
+                <p class="pModificamentos">Telefone&nbsp;<span>11996696001</span></p>
+            </div>
+        </main>
+        <!--<main id="login">
+            <h2 style="color: #d326da;">Login</h2>
+            <div>
+                <form action="" method="post">
+                    <input type="text" placeholder="Nome de usuário">
+                    <input type="password" placeholder="Senha">
+                    <input type="checkbox" name="" id="checkPass">
+                    <br>
+                    <br>
+                    <button style="width: 40%; height: 20%; color: #ade0e1;background-color: rgb(24, 24, 24); border: none;" type="submit">Login</button>
+                </form>
+            </div>
+        </main>-->
+        <!--<main id="registro">
+            <h2 style="color: #d326da;">Registro</h2>
+            <div>
+                <form action="" method="post">
+                    <input type="email" placeholder="Email">
+                    <input type="text" placeholder="Nome de usuário">
+                    <input type="password" placeholder="Senha">
+                    <input type="checkbox" name="" id="checkPass">
+                    <br>
+                    <br>
+                    <button style="width: 40%; height: 20%; color: #ade0e1;background-color: rgb(24, 24, 24); border: none;" type="submit">registro</button>
+                </form>
+            </div>
+        </main>-->
+        <!--<main id="carrinho">
+            <h2 style="color: #d326da;">Carrinho</h2>
+            <div>
+                <img src="/images/" style="width: 80%;" alt="Produto">
+                <p>Kit Festa - Festum</p>
+                <p>Preço R$<span id="Preço">0,00</span></p>
+                <button id="btnAdd"><img src="a" alt="add"></button>
+                <button id="btnRemove"><img src="a" alt="rem"></button>
+                <p>Quantidade: <span id="qntProduto">0</span></p>
+            </div>
+        </main>-->
+        <footer>
+            <p id="a">Todos os direitos contritais reservados</p>
+        </footer>
+        
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> 
+        <script src="./js/index.js"></script>
+    </body>
+
+</html>
