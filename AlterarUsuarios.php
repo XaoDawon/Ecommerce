@@ -21,7 +21,9 @@
 //ovo
     echo
     "
-        <center>
+        <main id='registro'>
+        <h2 style='color: #d326da;'>Registro</h2>
+        <div>
         <form action='' method='post'>
         <label for=''>Alterar usuario</label><br>
 
@@ -37,8 +39,10 @@
         <label for='telefone'>Telefone:</label>
         <input type='text' name='telefone' value='$telefone'><br><br>
 
-        <input type='submit' value='Salvar'>
-        </form>";
+        <input class='buttonGen' type='submit' value='Salvar'>
+        </form>
+        </div>
+        ";
 
         if ( $_POST ) {
             $conn = conecta();

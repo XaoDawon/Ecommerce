@@ -10,7 +10,7 @@
         <input type='text' name='nome' placeholder='Digite seu nome'><br>
 
 
-        <input type='text' name='email' placeholder='Digite seu nome'><br> 
+        <input type='text' name='email' placeholder='Digite seu email'><br> 
 
         <input type='text' name='senha' placeholder='Digite sua senha'><br>
         <input type='text'  name='telefone' placeholder='Digite seu telefone'><br><br>
@@ -86,4 +86,5 @@
         function defineId(){
             return $id;
         }
+        include("rodape.php");
 ?>

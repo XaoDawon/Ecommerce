@@ -25,22 +25,54 @@ aside{
 #centerDivModificamentos{
     width: 55vh;
     height: 50vh;
-    padding: 5vh;
+    padding: 4vh;
     background-color:rgb(36, 36, 36);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+#profileImage{
+    border-radius: 100%;
+    width: 30%;
+    aspect-ratio: 1/1;
+    align-self: center;
+    border: 3px solid rgb(197, 197, 197);
 }
 .pModificamentos{
-    color: rgb(58, 57, 57);
+    color:#0371c5;
     font-size: 3vh;
     padding-top: 2vh;
+    
 }
 .pModificamentos span{
     color: rgb(82, 82, 82);
 }
 #pUsuario{
     text-align: center;
-    padding-bottom: 10vh;
+    padding-bottom: 3vh;
+    
 }
+#opcModificamentos{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+.buttonGen{
+    width: 20vh;
+    height: 5vh;
+    border: 2px solid #0371c5;
+    color: #0466b1;
+    font-size: 1.70vh;
 
+}
+.buttonGen:hover{
+
+    border: 2px solid rgb(124, 194, 255);
+    color:  rgb(124, 194, 255);
+
+}
 #imgAside{
 
     position: absolute;

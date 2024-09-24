@@ -2,7 +2,6 @@
     include("cabecalho.php");
     include("util.php");
     $nula=NULL;
-    echo"<br><br><p class=C>Meu perfil</p>";
     $conn = conecta();
     $varSQL = "SELECT nome, email, telefone, senha, admin
                 FROM usuario
@@ -11,40 +10,32 @@
     $select = $conn->prepare($varSQL);
     $select->bindParam(':id_usuario', $usuario);
     $select->execute();
-    echo"<center><table border=3px></center><th>Nome</th><th>Email</th><th>Telefone</th><th>Senha</th><th>Alterar Dados</th><th>Excluir Dados</th>";
     while($linha = $select->fetch())
     {
-        echo"<tr>";
-        echo"<td>";
-        echo $linha["nome"] ;
-        echo"</td>";
-        echo"<td>";
-        echo $linha["email"] ;
-        echo"</td>";
-        echo"<td>";
-        echo $linha["telefone"] ;
-        echo"</td>";
-        echo"<td>";
-        echo $linha["senha"] ;
-        echo"</td>";
-        echo"<td>";
-        echo "<a href='AlterarUsuarios.php?id=".$usuario."&idprincipal=".$nula."'>Alterar dados</a>";
-        echo"</td>";
-
-        echo"<td>";
-        echo "<a href='ExcluirUsuarios.php?id=".$usuario."&idprincipal=".$nula."'>Excluir dados</a>";
-        echo"</td>";
-
-        echo"</tr>";
+        echo"
+        <main class='modificamentos'>
+            <div id='centerDivModificamentos'>
+                <img src='./images/profImages/download.jfif'  id='profileImage'>
+                <p class='pModificamentos' id='pUsuario'><span style='color:#4989b9;' >".$linha['nome']."</span></p>
+                <p class='pModificamentos'>Email&nbsp;<span >".$linha['email']."</span></p>
+                <p class='pModificamentos' style='padding-bottom: 3vh; '>Telefone&nbsp;<span>".$linha['telefone']."</span></p>
+                 <div id='opcModificamentos'>
+                    <input type='button' class='buttonGen' value='Alterar usuário'>
+                    <input type='button' class='buttonGen' value='Excluir usuário'>
+                    
+        
+        ";
 
         $adm = $linha['admin'];
     }
-    echo"</table>";
     if($adm){
-        echo"<br><br><p class=C>Login administrativo</p>";
-        echo"<p class=C><a href='usuarios.php?id=".$usuario."'>Usuários</a> <a href='produtos.php?id=".$usuario."'>Produtos</a></p>";
+        echo"<input type='button' class='buttonGen' value='Usuarios'>
+        <input type='button' class='buttonGen' value='Produtos'>";
     }
-    echo"<br><br><p class=C><a href='logout.php'>Logout</a></p>";
+    echo"</div>
+                
+            </div>
+        </main>";
    
 
     /*Aqui o email é como uma "pk". Existência de um select com o email inserido no cadastro: 'select nome from usuario where email = emailinserido'. 
