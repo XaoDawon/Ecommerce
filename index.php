@@ -2,6 +2,8 @@
 <?php 
     include('cabecalho.php'); 
     include('util.php');
+
+    $_SESSION['idProduto'] = "";
 ?>
 <main id="main">
     <aside>
@@ -23,6 +25,11 @@
         ";
         echo"</aside>";
     $filtro = 0;
+    if(isset($_SESSION['sessaoConectado'])){
+        $conected = 1;
+    }else{
+        $conected = 0;
+    }
     if($_GET){
         if(!$conn){
             echo"<h3 style='color:gray;'>Servidor não conectado</h3>";
@@ -49,6 +56,7 @@
                         <div>
                             <h3>".$linha['nome']."</h3>
                             <h3 style='color: rgb(14,153,2);'>R$".$linha['valor_unitario']."</h3>
+                            <input type='button' value='comprar' onclick='btnComprar(".$conected.",".$linha['id_produto'].")'>
                         </div>
                     </div>
                 
@@ -72,6 +80,7 @@
                         <div>
                             <h3>".$linha['nome']."</h3>
                             <h3 style='color: rgb(14,153,2);'>R$".$linha['valor_unitario']."</h3>
+                            <input type='button' value='comprar' onclick='btnComprar( ".$conected.",".$linha['id_produto'].")'>
                         </div>
                     </div>
                 
@@ -86,3 +95,4 @@
 
     include("rodape.php");
 ?>
+in

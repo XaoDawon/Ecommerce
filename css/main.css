@@ -1,3 +1,6 @@
+*{
+    font-family: arial;
+}
 body{
     background-size: cover;
     background-image: url(../images/fundo.jpg);
@@ -14,7 +17,30 @@ aside{
     padding: 0.8vw;
     position: relative;
 }
-aside
+.modificamentos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#centerDivModificamentos{
+    width: 55vh;
+    height: 50vh;
+    padding: 5vh;
+    background-color:rgb(36, 36, 36);
+}
+.pModificamentos{
+    color: rgb(58, 57, 57);
+    font-size: 3vh;
+    padding-top: 2vh;
+}
+.pModificamentos span{
+    color: rgb(82, 82, 82);
+}
+#pUsuario{
+    text-align: center;
+    padding-bottom: 10vh;
+}
+
 #imgAside{
 
     position: absolute;

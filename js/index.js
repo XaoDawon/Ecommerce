@@ -28,7 +28,11 @@ select.change(() => {
 
 function mudarTela(num){
        window.open(tela[num],"_self") 
-
-    
-    
 } 
+function btnComprar(conn, idProduto){
+    if(conn){
+        window.open("comprar.php?id=" + idProduto, "_self");
+    }else{
+        window.open("login.php", "_self");
+    }
+}
