@@ -33,6 +33,6 @@ function btnComprar(conn, idProduto){
     if(conn){
         window.open("comprar.php?id=" + idProduto, "_self");
     }else{
-        window.open("login.php", "_self");
+        window.open("Login.php", "_self");
     }
 }
