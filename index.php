@@ -18,7 +18,7 @@
                         <option value='Azul'>Azul</option>
                         <option value='Verde'>Verde</option>
                         <option value='Rosa'>Rosa</option>
-                        <option value='Laranja'>laranja</option>
+                        <option value='Laranja'>Laranja</option>
                         <option value='vazio' selected>  </option>
             </select>
         </div>
