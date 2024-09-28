@@ -295,6 +295,32 @@ button:hover{
         width: 20%;
         float: left;
     }
+    #dtlProduto{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 25% 25% 1fr;
+        padding: 5% 10% 10% 5%;
+        
+    }
+    #imgProduto{
+        grid-row-start: 1;
+        grid-row-end: 3;
+        padding: 0% 0% 5% 0%;
+
+    }
+    #infoProduto{
+        grid-column-end: 3;
+        grid-row-end: 2;
+    }
+    #opcProduto{
+        grid-column-end: 3;
+        grid-row-end: 3;
+    }
+    #infoAdcProduto{
+        grid-row-end: 4;
+        grid-column-end: 3;
+        grid-column-start: 1;
+    }
     div input{
         /*Style*/
         background-color: transparent;

@@ -46,7 +46,6 @@
                     ';
 
             }
-            echo"<hr>";
             function ValidaLogin ($paramLogin, $paramSenha, &$paramAdmin)  
             {
             $conn = conecta();  

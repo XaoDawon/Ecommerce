@@ -42,7 +42,7 @@
             <img src='imagens/p".$id_produto.".jpg' width='250px'>
         </div><br><br>";
         echo"<p>Informações gerais sobre o produto</p>";
-        echo "<center><table border=1px></center>";
+        echo "<center><table border=1px style='color:white;'></center>";
         echo "<tr>";
         echo"<td>";
         echo "Nome: ".  $nome =$linha['nome'];
@@ -70,4 +70,5 @@
         echo"</tr>";
         echo "</table>";
     }
+    include"./rodape.php";
 ?>

@@ -13,7 +13,7 @@ include('util.php');
 
         <input type='text' id='email' name='email' placeholder='Digite seu email'><br><br> 
 
-        <input type='text' id='senha' name='senha' placeholder='Digite sua senha'><br><br>
+        <input type='password' id='senha' name='senha' placeholder='Digite sua senha'><br><br>
 
         <input type='submit' id='submit' value='Salvar'>
         </form>
