@@ -27,10 +27,36 @@
             <button  onclick="mudarTela(document.getElementById('registro'), 'registro')"  id="registerLink">Registro</button>
             <button  onclick="mudarTela(document.getElementById('carrinho'), 'carrinho')"  id="carrinhoLink">Carrinho</button>
         </nav>
-        <!--
+        
         <section>
             <img src="./images/sec.jpg" style="width: 80%;" alt="Imagem do Produto">
         </section>
+        <main id='carrinho'>
+            <div id='container'>
+                <div id='Azul' class='produtoCarrinho'>
+                    <div class='imgProdutoCarrinho'>
+                        <img src='./images/copoAzulnormal.jpg' width='100%' height='100%' alt=''>
+                    </div>
+                    <div class='detalheProduto'>
+                        <h3>Copo Neon Azul</h3>
+                        <h4>R$8,00</h4>
+                        <h5>Quantidade: <span>1</span></h5>
+                    </div>
+                    <div class='opcProdutoCarrinho'>
+                        <input type='button' class='buttonGen' id='btComprarAzul' value='Adicionar'>
+                        <input type='button' class='buttonGen' id='btComprarAzul' value='Remover'>
+                    </div>
+                </div>
+            </div>
+           
+            <div class='finalizamento'>
+                <h3>Total</h3>
+                <h4>Valor To: <span>R$8,00</span></h4>
+                <h4>Status da Compra <span>pendente</span></h4>
+                <input class='buttonGen' type='button' value='Comprar'>
+            </div>
+        </main>
+        <!--
         <main class='dtlProduto' id='Azul' style="border: none;">
             <div class='imgProduto'>
                 <img src='./images/copoAzulnormal.jpg' alt=' height='100%'>

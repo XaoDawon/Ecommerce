@@ -1,6 +1,11 @@
 const tela = ['index.php','sobre.php', 'Login.php', 'CadastroUsuarios.php',
             'perfil.php', 'logout.php', 'carrinho.php', 'AlterarProdutos.php',
-            'ExcluirUsuarios.php', 'cabello eh lindo']
+            'ExcluirUsuarios.php', 'incluir.php', 'excluir.php']
+            /*  
+                00 01 02 03 
+                04 05 06 07
+                08 09 10 11
+            */
 const aside = $("aside")
 const divFiltro = $("#divFiltro")
 const select = $('#selectFiltro')
@@ -29,13 +34,18 @@ select.change(() => {
 })
 
 function mudarTela(num){
-       window.open(tela[num],"_self") 
+    window.open(tela[num],"_self")  
 } 
 function btnComprar(conn, idProduto){
     if(conn){
         window.open("comprar.php?id=" + idProduto, "_self");
     }else{
         window.open("Login.php", "_self");
+    }
+}
+function incExCarrinho(num, param){
+    if(get && getValue !== null){
+        window.open(tela[num] + getValue,"_self") 
     }
 }
 
