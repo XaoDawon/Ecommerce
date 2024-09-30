@@ -45,7 +45,7 @@
             }
             
             $select->execute();
-            //penis de gigante
+            
             echo"
                 <article>
             ";

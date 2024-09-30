@@ -465,4 +465,5 @@
         }
         $_SESSION['idProduto'] = "";
         // depois de fazer oq precisa com o produto recebido (se é que foi recebido), "zera" a session e começa dnv
+        include("rodape.php");
 ?>
