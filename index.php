@@ -52,7 +52,7 @@
             while($linha = $select-> fetch()){
                 echo"
                     <div class='produto' id='".$linha['cor']."'>
-                        <img src='./images/copo".$linha['id_produto']."normal.jpg' width='34%'>
+                        <img src='./images/copo".$linha['cor']."normal.jpg' width='34%'>
                         <div>
                             <h3>".$linha['nome']."</h3>
                             <h3 style='color: rgb(14,153,2);'>R$".$linha['valor_unitario']."</h3>
@@ -76,7 +76,7 @@
             while($linha = $select-> fetch()){
                 echo"
                     <div class='produto' id='".$linha['cor']."'>
-                        <img src='./images/copo".$linha['id_produto']."normal.jpg' width='34%'>
+                        <img src='./images/copo".$linha['cor']."normal.jpg' width='34%'>
                         <div>
                             <h3>".$linha['nome']."</h3>
                             <h3 style='color: rgb(14,153,2);'>R$".$linha['valor_unitario']."</h3>

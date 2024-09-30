@@ -1,6 +1,6 @@
 const tela = ['index.php','sobre.php', 'Login.php', 'CadastroUsuarios.php',
             'perfil.php', 'logout.php', 'carrinho.php', 'AlterarProdutos.php',
-            'ExcluirUsuarios.php', 'incluir.php', 'excluir.php']
+            'ExcluirUsuarios.php', 'incluir.php', 'excluir.php', 'finalizarCompra.php']
             /*  
                 00 01 02 03 
                 04 05 06 07
@@ -43,9 +43,12 @@ function btnComprar(conn, idProduto){
         window.open("Login.php", "_self");
     }
 }
-function incExCarrinho(num, param){
-    if(get && getValue !== null){
-        window.open(tela[num] + getValue,"_self") 
-    }
+function incExCarrinho(num, idProd, idCompra){
+    
+    window.open(tela[num] + "?id=" +idProd + "&compra=" + idCompra,"_self") 
+    
+}
+function finalizarCompra(num, id){
+    window.open(tela[num] + "?id=" +id,"_self") 
 }
 

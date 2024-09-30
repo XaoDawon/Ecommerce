@@ -17,7 +17,7 @@
                         <main id='carrinho'>
                     ";
         // se não houver uma compra já "logada" - primeira vez que entra no carrinho depois de logar
-        if($_SESSION['idCompra']==""){
+        if($_SESSION['idCompra']){
 
             //se houver um produto sendo recebido
             if($id_produto != ""){
@@ -90,38 +90,53 @@
                             $select->bindParam(':user',  $_SESSION['sessaoUsuario']);
                             $select->bindParam(':p', $status);
                             $select->execute();
+                            echo"<div id='container'>";
                             while($linha = $select->fetch()){
                                 //salva o id da compra agora existente na variável session
                                 $_SESSION['idCompra'] = $linha['fk_id_compra'];
                                 $sub = $linha['valor_unitario']*$linha['quantidade'];
                                 $total+=$sub;
-                                echo"
-                                <div id='container'>
-                                <div id='".$linha['cor']."' class='produtoCarrinho'>
+                                $cor = "ovo";
+                        if($linha['id_produto'] == 1){
+                            $cor = "Rosa";
+                        }if($linha['id_produto'] == 2){
+                            $cor = "Verde";
+                        }if($linha['id_produto'] == 3){
+                            $cor = "Azul";
+                        }if($linha['id_produto'] == 4){
+                            $cor = "Laranja";
+                        }
+
+                        echo"
+                                
+                                <div id='".$cor."' class='produtoCarrinho'>
                                     <div class='imgProdutoCarrinho'>
-                                        <img src='./images/copo".$linha['cor']."normal.jpg' width='100%' height='100%' alt=''>
+                                        <img src='./images/copo".$cor."normal.jpg' width='100%' height='100%' alt=''>
                                     </div>
-                                    <div class='detalheProduto'>
+                                    <div class='detalheProduto".$cor."'>
                                         <h3>".$linha['nome']."</h3>
                                         <h4>R$".$linha['valor_unitario']."</h4>
-                                        <h5>Quantidade: <span>".$linha['quantidade']."</span></h5>
+                                        <h5>Quantidade: <span>".$linha['quantidade'] + 1 ."</span></h5>
                                     </div>
                                     <div class='opcProdutoCarrinho'>
-                                        <input type='button' class='buttonGen' onclick='incExCarrinho(9, true, ?id=".$linha['id_produto']."&compra=".$id.")' id='btComprarAzul' value='Adicionar'>
-                                        <input type='button' class='buttonGen' onclick='incExCarrinho(10, true, ?id=".$linha['id_produto']."&compra=".$id.")' id='btComprarAzul' value='Remover'>
                                     </div>
                                 </div>
-                                </div>
+                            
                                 ";
-                            }
-                           echo"
-                           <div class='finalizamento'>
-                                    <h3>Total</h3>
-                                    <h4>Valor To: <span>".$total."</span></h4>
-                                    <h4>Status da Compra <span>".$status."</span></h4>
-                                    <input class='buttonGen' type='button' value='Comprar'>
-                                </div>
-                                ";
+                                }
+                                if($total == 0){
+                                    $status = " ";
+                                }
+                            echo"
+                            </div>
+                            <div class='finalizamento'>
+                                        <h3>Total</h3>
+                                        <h4>Valor To: <span>".$total."</span></h4>
+                                        <h4>Status da Compra <span>".$status."</span></h4>
+                                        <input class='buttonGen' onclick='finalizarCompra(11, ".$_SESSION['idCompra'].")' type='button' value='Comprar'>
+                                    </div>
+                                    ";
+                                    header("location: carrinho.php");
                     }
                     //se houver uma compra pendente no nome do usuário
                     else{
@@ -217,33 +232,46 @@
                         $select->bindParam(':p', $status);
                         $select->execute();
                         while($linha = $select->fetch()){
+                            $cor = "ovo";
+                            if($linha['id_produto'] == 1){
+                                $cor = "Rosa";
+                            }if($linha['id_produto'] == 2){
+                                $cor = "Verde";
+                            }if($linha['id_produto'] == 3){
+                                $cor = "Azul";
+                            }if($linha['id_produto'] == 4){
+                                $cor = "Laranja";
+                            }
+                            echo"<div id='container'>";
                             echo"
-                            <div id='container'>
-                                <div id='".$linha['cor']."' class='produtoCarrinho'>
+                            
+                                <div id='".$cor."' class='produtoCarrinho'>
                                     <div class='imgProdutoCarrinho'>
-                                        <img src='./images/copo".$linha['cor']."normal.jpg' width='100%' height='100%' alt=''>
+                                        <img src='./images/copo".$cor."normal.jpg' width='100%' height='100%' alt=''>
                                     </div>
-                                    <div class='detalheProduto'>
+                                    <div class='detalheProduto".$cor."'>
                                         <h3>".$linha['nome']."</h3>
                                         <h4>R$".$linha['valor_unitario']."</h4>
                                         <h5>Quantidade: <span>".$linha['quantidade']."</span></h5>
                                     </div>
-                                    <div class='opcProdutoCarrinho'>
-                                        <input type='button' class='buttonGen' onclick='incExCarrinho(9, true, ?id=".$linha['id_produto']."&compra=".$id.")' id='btComprarAzul' value='Adicionar'>
-                                        <input type='button' class='buttonGen' onclick='incExCarrinho(10, true, ?id=".$linha['id_produto']."&compra=".$id.")' id='btComprarAzul' value='Remover'>
-                                    </div>
                                 </div>
-                                </div>>
+                            
                                 ";
+                                header("location: carrinho.php");
+                            }
+                            if($total == 0){
+                                $status = " ";
                             }
                            echo"
+                           </div>
                            <div class='finalizamento'>
                                     <h3>Total</h3>
                                     <h4>Valor To: <span>".$total."</span></h4>
                                     <h4>Status da Compra <span>".$status."</span></h4>
-                                    <input class='buttonGen' type='button' value='Comprar'>
+                                    <input class='buttonGen' onclick='finalizarCompra(11, ".$_SESSION['idCompra'].")' type='button' value='Comprar'>
                                 </div>
                                 ";
+                            header('Location: carrinho.php');
                         
                     }
                 } //se não houver um produto sendo recebido só apresenta o grid (se tiver algo para apresentar)
@@ -258,42 +286,57 @@
                     $select->bindParam(':user',  $_SESSION['sessaoUsuario']);
                     $select->bindParam(':p', $status);
                     $select->execute();
-
+                    echo"<div id='container'>";
                     $status = "";
                     while($linha = $select->fetch()){
                         $_SESSION['idCompra'] = $linha['fk_id_compra'];
                         $id = $linha['fk_id_compra'];
                         $sub = $linha['valor_unitario']*$linha['quantidade'];
                         $total+=$sub;
+                        $cor = "ovo";
+                        if($linha['id_produto'] == 1){
+                            $cor = "Rosa";
+                        }if($linha['id_produto'] == 2){
+                            $cor = "Verde";
+                        }if($linha['id_produto'] == 3){
+                            $cor = "Azul";
+                        }if($linha['id_produto'] == 4){
+                            $cor = "Laranja";
+                        }
+                        
                         echo"
-                        <div id='container'>
-                        <div id='".$linha['cor']."' class='produtoCarrinho'>
-                            <div class='imgProdutoCarrinho'>
-                                <img src='./images/copo".$linha['cor']."normal.jpg' width='100%' height='100%' alt=''>
-                            </div>
-                            <div class='detalheProduto'>
-                                <h3>".$linha['nome']."</h3>
-                                <h4>R$".$linha['valor_unitario']."</h4>
-                                <h5>Quantidade: <span>".$linha['quantidade']."</span></h5>
-                            </div>
-                            <div class='opcProdutoCarrinho'>
-                                <input type='button' class='buttonGen' onclick='incExCarrinho(9, true, ?id=".$linha['id_produto']."&compra=".$id.")' id='btComprarAzul' value='Adicionar'>
-                                <input type='button' class='buttonGen' onclick='incExCarrinho(10, true, ?id=".$linha['id_produto']."&compra=".$id.")' id='btComprarAzul' value='Remover'>
-                            </div>
-                        </div>
-                        </div>
-                        ";
-                    }
-                   echo"
-                   <div class='finalizamento'>
-                            <h3>Total</h3>
-                            <h4>Valor To: <span>".$total."</span></h4>
-                            <h4>Status da Compra <span>".$status."</span></h4>
-                            <input class='buttonGen' type='button' value='Comprar'>
-                        </div>
-                        ";
+                            
+                                <div id='".$cor."' class='produtoCarrinho'>
+                                    <div class='imgProdutoCarrinho'>
+                                        <img src='./images/copo".$cor."normal.jpg' width='100%' height='100%' alt=''>
+                                    </div>
+                                    <div class='detalheProduto".$cor."'>
+                                        <h3>".$linha['nome']."</h3>
+                                        <h4>R$".$linha['valor_unitario']."</h4>
+                                        <h5>Quantidade: <span>".$linha['quantidade']."</span></h5>
+                                    </div>
+                                    <div class='opcProdutoCarrinho'>
+                                    <input type='button' class='buttonGen' onclick='incExCarrinho(9, ".$linha['id_produto'].",".$linha['fk_id_compra'].")' id='btComprar".$cor."' value='Adicionar'>
+                                    <input type='button' class='buttonGen' onclick='incExCarrinho(10, ".$linha['id_produto'].",".$linha['fk_id_compra'].")' id='btComprar".$cor."' value='Remover'>
+                                    </div>
+                                </div>
+                            
+                                ";
+                            }
+                            if($total == 0){
+                                $status = " ";
+                            }
+                        echo"
+                           </div>
+                           <div class='finalizamento'>
+                                    <h3>Total</h3>
+                                    <h4>Valor To: <span>".$total."</span></h4>
+                                    <h4>Status da Compra <span>".$status."</span></h4>
+                                    <input class='buttonGen' onclick='finalizarCompra(11, ".$_SESSION['idCompra'].")' type='button' value='Comprar'>
+                                </div>
+                                ";
                 }
-                $compp = $id;
+                //$compp = $id;
             } //se já houver uma compra "logada" - não é a primeira vez que entra no carrinho depois de logar
         else{
             //pega o id dessa compra em andamento
@@ -375,33 +418,50 @@
                     while($linha = $select->fetch()){
                         $sub = $linha['valor_unitario']*$linha['quantidade'];
                         $total+=$sub;
+                        $cor = "ovo";
+                        if($linha['id_produto'] == 1){
+                            $cor = "Rosa";
+                        }if($linha['id_produto'] == 2){
+                            $cor = "Verde";
+                        }if($linha['id_produto'] == 3){
+                            $cor = "Azul";
+                        }if($linha['id_produto'] == 4){
+                            $cor = "Laranja";
+                        }
+                        echo"<div id='container'>";
                         echo"
-                        <div id='container'>
-                        <div id='".$linha['cor']."' class='produtoCarrinho'>
-                            <div class='imgProdutoCarrinho'>
-                                <img src='./images/copo".$linha['cor']."normal.jpg' width='100%' height='100%' alt=''>
-                            </div>
-                            <div class='detalheProduto'>
-                                <h3>".$linha['nome']."</h3>
-                                <h4>R$".$linha['valor_unitario']."</h4>
-                                <h5>Quantidade: <span>".$linha['quantidade']."</span></h5>
-                            </div>
-                            <div class='opcProdutoCarrinho'>
-                                <input type='button' class='buttonGen' onclick='incExCarrinho(9, true, ?id=".$linha['id_produto']."&compra=".$idcomp.")' id='btComprarAzul' value='Adicionar'>
-                                <input type='button' class='buttonGen' onclick='incExCarrinho(10, true, ?id=".$linha['id_produto']."&compra=".$idcomp.")' id='btComprarAzul' value='Remover'>
-                            </div>
-                        </div>
-                        </div>
-                        ";
-                    }
-                   echo"
-                   <div class='finalizamento'>
-                            <h3>Total</h3>
-                            <h4>Valor To: <span>".$total."</span></h4>
-                            <h4>Status da Compra <span>".$status."</span></h4>
-                            <input class='buttonGen' type='button' value='Comprar'>
-                        </div>
-                        ";
+                            
+                                <div id='".$cor."' class='produtoCarrinho'>
+                                    <div class='imgProdutoCarrinho'>
+                                        <img src='./images/copo".$cor."normal.jpg' width='100%' height='100%' alt=''>
+                                    </div>
+                                    <div class='detalheProduto".$cor."'>
+                                        <h3>".$linha['nome']."</h3>
+                                        <h4>R$".$linha['valor_unitario']."</h4>
+                                        <h5>Quantidade: <span>".$linha['quantidade']."</span></h5>
+                                    </div>
+                                    <div class='opcProdutoCarrinho'>
+                                    <input type='button' class='buttonGen' onclick='incExCarrinho(9, ".$linha['id_produto'].",".$idcomp.")' id='btComprar".$cor."' value='Adicionar'>
+                                    <input type='button' class='buttonGen' onclick='incExCarrinho(10, ".$linha['id_produto'].",".$idcomp.")' id='btComprar".$cor."' value='Remover'>
+                                    </div>
+                                </div>
+                            
+                                ";
+                            }
+                            if($total == 0){
+                                $status = " ";
+                            }
+                           echo"
+                           
+                           </div>
+                           <div class='finalizamento'>
+                                    <h3>Total</h3>
+                                    <h4>Valor To: <span>".$total."</span></h4>
+                                    <h4>Status da Compra <span>".$status."</span></h4>
+                                    <input class='buttonGen' onclick='finalizarCompra(11, ".$_SESSION['idCompra'].")' type='button' value='Comprar'>
+                                </div>
+                                ";
+                        header('Location: carrinho.php');
             } // se não houver um produto sendo recebido apenas apresenta oq já tem na compra
             else{
 
@@ -414,40 +474,56 @@
                 $select->bindParam(':user',  $_SESSION['sessaoUsuario']);
                 $select->bindParam(':p', $status);
                 $select->execute();
-
+                echo"<div id='container'>";
                 while($linha = $select->fetch()){
                     $sub = $linha['valor_unitario']*$linha['quantidade'];
                     $total+=$sub;
+                    $cor = "ovo";
+                    if($linha['id_produto'] == 1){
+                        $cor = "Rosa";
+                    }if($linha['id_produto'] == 2){
+                        $cor = "Verde";
+                    }if($linha['id_produto'] == 3){
+                        $cor = "Azul";
+                    }if($linha['id_produto'] == 4){
+                        $cor = "Laranja";
+                    }
+                    
                      echo"
-                            <div id='container'>
-                                <div id='".$linha['id_produto']."' class='produtoCarrinho'>
+                            
+                                <div id='".$cor."' class='produtoCarrinho'>
                                     <div class='imgProdutoCarrinho'>
-                                        <img src='./images/copo".$linha['id_produto']."normal.jpg' width='100%' height='100%' alt=''>
+                                        <img src='./images/copo".$cor."normal.jpg' width='100%' height='100%' alt=''>
                                     </div>
-                                    <div class='detalheProduto'>
+                                    <div class='detalheProduto".$cor."'>
                                         <h3>".$linha['nome']."</h3>
                                         <h4>R$".$linha['valor_unitario']."</h4>
                                         <h5>Quantidade: <span>".$linha['quantidade']."</span></h5>
                                     </div>
                                     <div class='opcProdutoCarrinho'>
-                                        <input type='button' class='buttonGen' onclick='incExCarrinho(9, true, ?id=".$linha['id_produto']."&compra=".$idcomp.")' id='btComprarAzul' value='Adicionar'>
-                                        <input type='button' class='buttonGen' onclick='incExCarrinho(10, true, ?id=".$linha['id_produto']."&compra=".$idcomp.")' id='btComprarAzul' value='Remover'>
+                                        <input type='button' class='buttonGen' onclick='incExCarrinho(9, ".$linha['id_produto'].",".$idcomp.")' id='btComprar".$cor."' value='Adicionar'>
+                                        <input type='button' class='buttonGen' onclick='incExCarrinho(10, ".$linha['id_produto'].",".$idcomp.")' id='btComprar".$cor."' value='Remover'>
                                     </div>
                                 </div>
-                            </div>
+                            
                                 ";
                             }
+                            if($total < 0){
+                                $status = " ";
+                            }
                            echo"
+                           </div>
                            <div class='finalizamento'>
                                     <h3>Total</h3>
                                     <h4>Valor To: <span>".$total."</span></h4>
                                     <h4>Status da Compra <span>".$status."</span></h4>
-                                    <input class='buttonGen' type='button' value='Comprar'>
+                                    <input class='buttonGen' onclick='finalizarCompra(11, ".$_SESSION['idCompra'].")' type='button' value='Comprar'>
                                 </div>
                                 ";
             }
             $compp = $idcomp;
         }
+        echo"</main>";
         $_SESSION['idProduto'] = "";
         // depois de fazer oq precisa com o produto recebido (se é que foi recebido), "zera" a session e começa dnv
         include("rodape.php");

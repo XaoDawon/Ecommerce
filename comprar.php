@@ -26,7 +26,7 @@
             <div class='imgProduto'>
     ";
         echo"
-                <img src='./images/copo".$cor =$linha['id_produto']."normal.jpg' alt=' height='100%'>
+                <img src='./images/copo".$cor =$linha['cor']."normal.jpg' alt=' height='100%'>
             </div>
             <div class='infoProduto' style='border: none;'>
                 <h3 style='font-size: 5.2vh;' id='nomeProduto'>
