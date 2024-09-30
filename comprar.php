@@ -39,7 +39,7 @@
                 Valor: R$ ". $valor = $linha['valor_unitario'] ." <br><br>
                <a href= 'carrinho.php'>Adicionar ao Carrinho</a> <br><br>
             </p>
-            <img src='imagens/p".$id_produto.".jpg' width='250px'>
+            <img src='images/p".$id_produto.".jpg' width='250px'>
         </div><br><br>";
         echo"<p>Informações gerais sobre o produto</p>";
         echo "<center><table border=1px style='color:white;'></center>";
@@ -70,5 +70,5 @@
         echo"</tr>";
         echo "</table>";
     }
-    include"./rodape.php";
+    include ('rodape.php');
 ?>
