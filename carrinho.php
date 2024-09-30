@@ -17,7 +17,7 @@
                         <main id='carrinho'>
                     ";
         // se não houver uma compra já "logada" - primeira vez que entra no carrinho depois de logar
-        if($_SESSION['idCompra']){
+        if($_SESSION['idCompra'] == ""){
 
             //se houver um produto sendo recebido
             if($id_produto != ""){
