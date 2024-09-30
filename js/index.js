@@ -1,4 +1,6 @@
-const tela = ['index.php','sobre.php', 'Login.php', 'CadastroUsuarios.php','perfil.php', 'logout.php', 'Carrinho.php']
+const tela = ['index.php','sobre.php', 'Login.php', 'CadastroUsuarios.php',
+            'perfil.php', 'logout.php', 'Carrinho.php', 'AlterarProdutos.php',
+            'ExcluirUsuarios.php', ]
 const aside = $("aside")
 const divFiltro = $("#divFiltro")
 const select = $('#selectFiltro')
@@ -36,3 +38,4 @@ function btnComprar(conn, idProduto){
         window.open("Login.php", "_self");
     }
 }
+

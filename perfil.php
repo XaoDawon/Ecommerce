@@ -16,12 +16,12 @@
         <main class='modificamentos'>
             <div id='centerDivModificamentos'>
                 <img src='./images/profImages/download.jfif'  id='profileImage'>
-                <p class='pModificamentos' id='pUsuario'><span style='color:#4989b9;' >".$linha['nome']."</span></p>
+                <p class='pModificamentos' id='pUsuario'><span style='color:#af178e;' >".$linha['nome']."</span></p>
                 <p class='pModificamentos'>Email&nbsp;<span >".$linha['email']."</span></p>
                 <p class='pModificamentos' style='padding-bottom: 3vh; '>Telefone&nbsp;<span>".$linha['telefone']."</span></p>
                  <div id='opcModificamentos'>
-                    <input type='button' class='buttonGen' value='Alterar usuário'>
-                    <input type='button' class='buttonGen' value='Excluir usuário'>
+                    <input type='button' class='buttonGen' onclick='mudarTela(7)' value='Alterar usuário'>
+                    <input type='button' class='buttonGen' onclick='mudarTela(8)' value='Excluir usuário'>
                     
         
         ";

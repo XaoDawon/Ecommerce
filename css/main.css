@@ -40,7 +40,7 @@ aside{
     border: 3px solid rgb(197, 197, 197);
 }
 .pModificamentos{
-    color:#0371c5;
+    color:#af178e;
     font-size: 3vh;
     padding-top: 2vh;
     
@@ -62,17 +62,52 @@ aside{
 .buttonGen{
     width: 20vh;
     height: 5vh;
-    border: 2px solid #0371c5;
-    color: #0466b1;
+    border: 2px solid #af178e;
+    color: #ad1b89;
     font-size: 1.70vh;
 
 }
 .buttonGen:hover{
 
-    border: 2px solid rgb(124, 194, 255);
-    color:  rgb(124, 194, 255);
+    border: 2px solid #c264ad;
+    color:  #c264ad;
 
 }
+#btComprarAzul{
+    border: 2px solid #037AD5;
+    color: #037AD5 ;
+}
+#btComprarAzul:hover{
+    border: 2px solid #5ca2d8;
+    color: #5ca2d8 ;
+}
+#btComprarRosa{
+    border: 2px solid #FA83A0;
+    color: #FA83A0;
+}
+#btComprarRosa:hover{
+    border: 2px solid #f7abbe;
+    color: #f7abbe;
+}
+#btComprarLaranja{
+    border: 2px solid #F48D42;
+    color: #F48D42;
+}
+#btComprarLaranja:hover{
+    border: 2px solid #f8ac75;
+    color: #f8ac75;
+}
+#btComprarVerde{
+    border: 2px solid #77C651;
+    color: #77C651;
+}
+#btComprarVerde:hover{
+    border: 2px solid #93c27d;
+    color: #93c27d;
+}
+
+
+
 #imgAside{
 
     position: absolute;
@@ -295,28 +330,33 @@ button:hover{
         width: 20%;
         float: left;
     }
-    #dtlProduto{
+    .dtlProduto{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 25% 25% 1fr;
-        padding: 5% 10% 10% 5%;
+        grid-template-rows: 35% 35% 1fr;
+        padding: 10% 5% 10% 5%;
         
     }
-    #imgProduto{
+    .imgProduto{
         grid-row-start: 1;
         grid-row-end: 3;
-        padding: 0% 0% 5% 0%;
+        padding: 0% 5% 5% 0%;
+        display: flex;
+        justify-content: center;
 
     }
-    #infoProduto{
+    .infoProduto{
         grid-column-end: 3;
         grid-row-end: 2;
     }
-    #opcProduto{
+    .opcProduto{
         grid-column-end: 3;
         grid-row-end: 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-    #infoAdcProduto{
+    .infoAdcProduto{
         grid-row-end: 4;
         grid-column-end: 3;
         grid-column-start: 1;
