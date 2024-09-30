@@ -1,6 +1,6 @@
 const tela = ['index.php','sobre.php', 'Login.php', 'CadastroUsuarios.php',
             'perfil.php', 'logout.php', 'carrinho.php', 'AlterarProdutos.php',
-            'ExcluirUsuarios.php', ]
+            'ExcluirUsuarios.php', 'cabello eh lindo']
 const aside = $("aside")
 const divFiltro = $("#divFiltro")
 const select = $('#selectFiltro')
