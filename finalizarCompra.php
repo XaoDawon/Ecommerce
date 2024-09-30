@@ -116,10 +116,12 @@ $compra = $_GET['id'];
         }
         
         echo"<b>Compra concluída com sucesso!</b><br><a href='index.php'>Voltar para o Início</a>";
+        $_SESSION['idCompra'] = "";     
     }
     else if (!$teste){
         echo"Não temos o produto ".$nome." disponível nessas quantidades no nosso estoque<br>";
         $_SESSION['idProduto'] = "";
+        
         echo"<a href='carrinho.php'>Voltar ao carrinho</a>";
     }
 }

@@ -36,7 +36,8 @@
             if($sessaoConectado){
                 $idSessao = session_id();
                 echo"<button onclick='mudarTela(4)'>Perfil</button>
-                    <button onclick='mudarTela(5,null)'>Logout</button>
+                    <button onclick='mudarTela(6)'' id='aboutLink'>Carrinho</button>
+                    <button onclick='mudarTela(5)'>Logout</button>
                 ";
             }
             else{
