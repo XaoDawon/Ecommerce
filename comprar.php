@@ -9,7 +9,7 @@
         echo "Não conectado";
         exit;
     }
-
+    
     $varSQL = "SELECT *
             FROM produto
             WHERE id_produto = :id";
