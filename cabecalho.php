@@ -25,6 +25,7 @@
         <?php   
 
             session_start();
+            error_reporting(0);
             if(isset($_SESSION['sessaoConectado'])){
                 $sessaoConectado = $_SESSION['sessaoConectado'];
                 $login = $_SESSION['sessaoLogin'];

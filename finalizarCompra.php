@@ -10,6 +10,8 @@ $compra = $_GET['id'];
 
     $acres = $_POST['acres'];
     $transacao = null;
+    
+    
 
     $conn = conecta();
 
@@ -90,13 +92,16 @@ $compra = $_GET['id'];
             $select1 ->bindParam(':id', $linha['fk_id_produto']);
             $select1 ->execute();
             while ($l = $select1->fetch()) {
-                $q2 = $l['qtde_estoque'];
-                $q2-= $q;
-                $varSQL2 = "UPDATE produto SET qtde_estoque = :valor WHERE id_produto = :id";
-                $update = $conn->prepare($varSQL2);
-                $update ->bindParam(':valor', $q2);
-                $update ->bindParam(':id', $linha['fk_id_produto']);
-                $update ->execute();
+                
+                    $q2 = $l['qtde_estoque'];
+                    $q2-= $q;
+                    $varSQL2 = "UPDATE produto SET qtde_estoque = :valor WHERE id_produto = :id";
+                    $update = $conn->prepare($varSQL2);
+                    $update ->bindParam(':valor', $q2);
+                    $update ->bindParam(':id', $linha['fk_id_produto']);
+                    $update ->execute();
+
+                
             }        
         }
         echo"<script>
@@ -111,8 +116,8 @@ $compra = $_GET['id'];
             window.alert('Não temos o produto ".$nome." disponível nessas quantidades no nosso estoque')
             window.open('carrinho.php', '_self')
         </script>";
-        $_SESSION['idProduto'] = "";
         
+        $_SESSION['idCompra'] = "";  
         
     }
 }

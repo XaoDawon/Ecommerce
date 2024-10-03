@@ -20,8 +20,8 @@
                 <p class='pModificamentos'>Email&nbsp;<span >".$linha['email']."</span></p>
                 <p class='pModificamentos' style='padding-bottom: 3vh; '>Telefone&nbsp;<span>".$linha['telefone']."</span></p>
                  <div id='opcModificamentos'>
-                    <input type='button' class='buttonGen' onclick='mudarTela(7)' value='Alterar usuário'>
-                    <input type='button' class='buttonGen' onclick='mudarTela(8)' value='Excluir usuário'>
+                    <input type='button' class='buttonGen' onclick='opcPerfil(12,".$usuario." , 0)' value='Alterar usuário'>
+                    <input type='button' class='buttonGen' onclick='opcPerfil(8,".$usuario." , 0)' value='Excluir usuário'>
                     
         
         ";

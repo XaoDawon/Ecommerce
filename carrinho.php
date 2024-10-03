@@ -278,6 +278,7 @@
                                 </form>
                             </div>
                                 ";
+                                header("location: carrinho.php");
                         
                     }
                 } //se não houver um produto sendo recebido só apresenta o grid (se tiver algo para apresentar)
@@ -456,6 +457,7 @@
                                 </div>
                             
                                 ";
+                                header("location: carrinho.php");
                             }
                             if($total == 0){
                                 $status = " ";
@@ -474,6 +476,7 @@
                                 </form>
                             </div>
                                 ";
+                                header("location: carrinho.php");
                         
             } // se não houver um produto sendo recebido apenas apresenta oq já tem na compra
             else{
@@ -489,6 +492,15 @@
                 $select->execute();
                 echo"<div id='container'>";
                 while($linha = $select->fetch()){
+                    if($linha['quantidade'] == null){
+                        echo"
+
+                            <script>
+                                window.open('incluir.php?id=".$linha['id_produto']."&compra=".$idcomp."','_self');
+                            </script>
+
+                        ";
+                    }
                     $sub = $linha['valor_unitario']*$linha['quantidade'];
                     $total+=$sub;
                     $cor = "ovo";
@@ -526,12 +538,12 @@
                         </div>
                         <div class='finalizamento'>
                                 <h2>Total</h2>
-                                <h4>Valor Total: <span>".$total."</span></h4>
+                                <h4>Valor Total: <span id='total'>".$total."</span></h4>
                                 <h4>Status da Compra <span>".$status."</span></h4>
                                 
                                 <form action='finalizarCompra.php?id=".$_SESSION['idCompra']."' method='post'>
                                     <h4>Acréscimo R$<input id='inputDesconto' name= 'acres' class='buttonGen' type='number'></h4>
-                                    <input class='buttonGen' type='submit' value='Comprar'>
+                                    <input onclick='finalizarCompra' class='buttonGen' id='btComprar' type='submit' value='Comprar'>
                                 </form>
                             </div>
                         ";

@@ -1,21 +1,22 @@
 const tela = ['index.php','sobre.php', 'Login.php', 'CadastroUsuarios.php',
             'perfil.php', 'logout.php', 'carrinho.php', 'AlterarProdutos.php',
-            'ExcluirUsuarios.php', 'incluir.php', 'excluir.php', 'finalizarCompra.php']
+            'ExcluirUsuarios.php', 'incluir.php', 'excluir.php', 'finalizarCompra.php',
+            'AlterarUsuarios.php']
             /*  
                 00 01 02 03 
                 04 05 06 07
                 08 09 10 11
+                12
             */
 const aside = $("aside")
 const divFiltro = $("#divFiltro")
 const select = $('#selectFiltro')
 const btAside = $('#imgAside')
-
-
+const btAcres = $('#inputDesconto');
+const totalCarrinho = $('#total').html(); 
+const btComprar = $('#btComprar');
 
 divFiltro.css("display", "none");
-
-
 aside.on('mouseenter', () =>{
     divFiltro.css("position", "absolute")
     divFiltro.css('display' , "inline")
@@ -43,12 +44,13 @@ function btnComprar(conn, idProduto){
         window.open("Login.php", "_self");
     }
 }
+function opcPerfil(num, id, idPrincipal){
+    window.open(tela[num] + "?id=" +id + "&idPrincipal=" + idPrincipal,"_self") 
+}
 function incExCarrinho(num, idProd, idCompra){
     
     window.open(tela[num] + "?id=" +idProd + "&compra=" + idCompra,"_self") 
     
 }
-function finalizarCompra(num, id){
-    window.open(tela[num] + "?id=" +id,"_self") 
-}
+
 

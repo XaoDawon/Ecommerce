@@ -201,7 +201,7 @@ button:hover{
     }
     body{
         display: grid;
-        grid-template-rows:  10% 5% 1fr 100% 20%;
+        grid-template-rows:  10% 5% 1fr 120% 20%;
         margin-left: 6%;
         margin-right: 6%;
         height: 100vh;
@@ -329,6 +329,7 @@ button:hover{
         background-color: rgb(48, 48, 48);
         padding: 1vh 1vh 1vh 1vh;
         border-radius: 1.5vh;
+        margin-bottom: 3px;
     }
     
     .imgProdutoCarrinho{
@@ -338,6 +339,7 @@ button:hover{
 
     .imgProdutoCarrinho img{ 
         aspect-ratio: 1/1;
+        width: 20vh;
         border-radius: 1vh;
     }
     .detalheProduto{

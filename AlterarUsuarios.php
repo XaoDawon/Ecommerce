@@ -93,5 +93,7 @@
             else{
                 echo"<script>alert('Email já cadastrado');</script>";
             }
+
         }
+        include('rodape.php');
 ?>
