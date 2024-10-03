@@ -1,6 +1,7 @@
 <?php
      include('cabecalho.php');
      include('util.php');
+     ini_set('error_reporting', E_ALL & ~E_STRICT & ~E_NOTICE & ~E_DEPRECATED);
      $id_produto = $_SESSION['idProduto'];
  
      $conn = conecta();
