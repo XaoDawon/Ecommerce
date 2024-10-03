@@ -6,25 +6,10 @@ $q;
 $q2;
 $nome;
 $compra = $_GET['id'];
-
-      echo"
-                <form method ='post' action=''>
-
-                <label for='acres'>Acréscimo ou desconto:</label>
-                <input type='number' name='acres'><br><br> 
-
-                <label for='transacao'>Qual o id da trasação:</label>
-                <input type='text' name='transacao'><br><br> 
-
-                <input type='submit' value='Salvar'>
-                </form>
-
-            ";
-        
     if($_POST){
 
     $acres = $_POST['acres'];
-    $transacao = $_POST['transacao'];
+    $transacao = null;
 
     $conn = conecta();
 
@@ -114,15 +99,21 @@ $compra = $_GET['id'];
                 $update ->execute();
             }        
         }
+        echo"<script>
+            window.alert('Compra realizada com sucesso!');
+            window.open('index.php', '_self')
+        </script>";
         
-        echo"<b>Compra concluída com sucesso!</b><br><a href='index.php'>Voltar para o Início</a>";
         $_SESSION['idCompra'] = "";     
     }
     else if (!$teste){
-        echo"Não temos o produto ".$nome." disponível nessas quantidades no nosso estoque<br>";
+        echo"<script>
+            window.alert('Não temos o produto ".$nome." disponível nessas quantidades no nosso estoque')
+            window.open('carrinho.php', '_self')
+        </script>";
         $_SESSION['idProduto'] = "";
         
-        echo"<a href='carrinho.php'>Voltar ao carrinho</a>";
+        
     }
 }
 

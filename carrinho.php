@@ -1,7 +1,7 @@
 <?php
      include('cabecalho.php');
      include('util.php');
-     ini_set('error_reporting', E_ALL & ~E_STRICT & ~E_NOTICE & ~E_DEPRECATED);
+
      $id_produto = $_SESSION['idProduto'];
  
      $conn = conecta();
@@ -107,7 +107,6 @@
                         }if($linha['id_produto'] == 4){
                             $cor = "Laranja";
                         }
-
                         echo"
                                 
                                 <div id='".$cor."' class='produtoCarrinho'>
@@ -258,7 +257,6 @@
                                 </div>
                             
                                 ";
-                                header("location: carrinho.php");
                             }
                             if($total == 0){
                                 $status = " ";
@@ -272,7 +270,6 @@
                                     <input class='buttonGen' onclick='finalizarCompra(11, ".$_SESSION['idCompra'].")' type='button' value='Comprar'>
                                 </div>
                                 ";
-                            header('Location: carrinho.php');
                         
                     }
                 } //se não houver um produto sendo recebido só apresenta o grid (se tiver algo para apresentar)
@@ -304,7 +301,6 @@
                         }if($linha['id_produto'] == 4){
                             $cor = "Laranja";
                         }
-                        
                         echo"
                             
                                 <div id='".$cor."' class='produtoCarrinho'>
@@ -415,7 +411,7 @@
                     $select->bindParam(':user',  $_SESSION['sessaoUsuario']);
                     $select->bindParam(':p', $status);
                     $select->execute();
-                    
+                    echo"<div id='container'>";
                     while($linha = $select->fetch()){
                         $sub = $linha['valor_unitario']*$linha['quantidade'];
                         $total+=$sub;
@@ -429,7 +425,7 @@
                         }if($linha['id_produto'] == 4){
                             $cor = "Laranja";
                         }
-                        echo"<div id='container'>";
+                        
                         echo"
                             
                                 <div id='".$cor."' class='produtoCarrinho'>
@@ -462,7 +458,7 @@
                                     <input class='buttonGen' onclick='finalizarCompra(11, ".$_SESSION['idCompra'].")' type='button' value='Comprar'>
                                 </div>
                                 ";
-                        header('Location: carrinho.php');
+                        
             } // se não houver um produto sendo recebido apenas apresenta oq já tem na compra
             else{
 
@@ -489,14 +485,7 @@
                     }if($linha['id_produto'] == 4){
                         $cor = "Laranja";
                     }
-                    $qnt = 0;
-                    if($linha['quantidade'] <1){
-                        $qnt = 1;
 
-                    }else{
-                        $qnt = $linha['quantidade'];
-                    }
-                    
                      echo"
                             
                                 <div id='".$cor."' class='produtoCarrinho'>
@@ -506,28 +495,30 @@
                                     <div class='detalheProduto".$cor."'>
                                         <h3>".$linha['nome']."</h3>
                                         <h4>R$".$linha['valor_unitario']."</h4>
-                                        <h5>Quantidade: <span>".$qnt."</span></h5>
+                                        <h5>Quantidade: <span>".$linha['quantidade']."</span></h5>
                                     </div>
                                     <div class='opcProdutoCarrinho'>
                                         <input type='button' class='buttonGen' onclick='incExCarrinho(9, ".$linha['id_produto'].",".$idcomp.")' id='btComprar".$cor."' value='Adicionar'>
                                         <input type='button' class='buttonGen' onclick='incExCarrinho(10, ".$linha['id_produto'].",".$idcomp.")' id='btComprar".$cor."' value='Remover'>
                                     </div>
                                 </div>
+                                ";
+                                
+                        }
                             
-                                ";
-                            }
-                            if($total < 1){
-                                $status = " ";
-                            }
-                           echo"
-                           </div>
-                           <div class='finalizamento'>
-                                    <h3>Total</h3>
-                                    <h4>Valor Total: <span>".$total."</span></h4>
-                                    <h4>Status da Compra <span>".$status."</span></h4>
-                                    <input class='buttonGen' onclick='finalizarCompra(11, ".$_SESSION['idCompra'].")' type='button' value='Comprar'>
-                                </div>
-                                ";
+                        echo"
+                        </div>
+                        <div class='finalizamento'>
+                                <h3>Total</h3>
+                                <h4>Valor Total: <span>".$total."</span></h4>
+                                <h4>Status da Compra <span>".$status."</span></h4>
+                                
+                                <form action='finalizarCompra.php?id=".$_SESSION['idCompra']."' method='post'>
+                                    <h4>Acréscimo R$<input id='inputDesconto' name= 'acres' class='buttonGen' type='number'></h4>
+                                    <input class='buttonGen' type='submit' value='Comprar'>
+                                </form>
+                            </div>
+                        ";
             }
             $compp = $idcomp;
         }

@@ -83,8 +83,5 @@
                 echo"<script>alert('Email já cadastrado');</script>";
             }
         }
-        function defineId(){
-            return $id;
-        }
         include("rodape.php");
 ?>

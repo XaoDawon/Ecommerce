@@ -50,10 +50,13 @@
             </div>
            
             <div class='finalizamento'>
-                <h3>Total</h3>
+                <h2>Total</h2><br>
                 <h4>Valor To: <span>R$8,00</span></h4>
                 <h4>Status da Compra <span>pendente</span></h4>
-                <input class='buttonGen' type='button' value='Comprar'>
+                <form action='finalizarCompra.php' method='post'>
+                    <h4>Acréscimo R$<input id='inputDesconto' name= 'acres' class='buttonGen' type='number'></h4>
+                    <input class='buttonGen' type='submit' value='Comprar'>
+                </form>
             </div>
         </main>
         <!--

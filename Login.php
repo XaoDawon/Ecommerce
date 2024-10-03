@@ -46,12 +46,18 @@ include('util.php');
             $_SESSION['sessaoUsuario'] = $id; //insere o id do usuário logado em uma variável global
             echo"<br>Conectado com sucesso!";
             echo"<br><a href='perfil.php?id=".$id."'>Meus Dados</a>"; 
+            header("location: index.php");
         }
         else{
             $_SESSION['sessaoLogin'] = '';
-            echo"<br><p class=C>Não foi possível conectar</p>";
+            echo"
+                <script>
+                    window.alert('Usuario e ou senha nâo estão corretas, faça a correção e tente novamente');
+                </script>
+            ";
+            
         }
-        header("location: index.php");
+        
         
     }
 ?>

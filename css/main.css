@@ -322,7 +322,7 @@ button:hover{
     }
     .produtoCarrinho{
         width: 75%;
-        height: 20%;
+        height: 25%;
         display: flex;
         flex-direction: row;
         margin-right: 10%;
@@ -388,14 +388,14 @@ button:hover{
         align-items: flex-end;
     }
     .finalizamento{
-        height: 30%;
+        height: 35%;
         width: 27%;
         background-color: rgb(48, 48, 48);
         padding: 3% 2.5% 0% 2.5%;
         border-radius: 1.5vh;
         border: 3px solid #f00b79;
     }
-    .finalizamento h3{
+    .finalizamento h2{
         color: #ac0757;
     }
     .finalizamento h4{
@@ -404,6 +404,10 @@ button:hover{
     .finalizamento h4 span{
         color: #ad1b89;
         
+    }
+    #inputDesconto{
+        width: 22%;
+        height: 10%;
     }
     
     .dtlProduto{
