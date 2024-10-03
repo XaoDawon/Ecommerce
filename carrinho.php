@@ -130,11 +130,15 @@
                             echo"
                             </div>
                             <div class='finalizamento'>
-                                        <h3>Total</h3>
-                                        <h4>Valor To: <span>".$total."</span></h4>
-                                        <h4>Status da Compra <span>".$status."</span></h4>
-                                        <input class='buttonGen' onclick='finalizarCompra(11, ".$_SESSION['idCompra'].")' type='button' value='Comprar'>
-                                    </div>
+                                <h2>Total</h2>
+                                <h4>Valor Total: <span>".$total."</span></h4>
+                                <h4>Status da Compra <span>".$status."</span></h4>
+                                
+                                <form action='finalizarCompra.php?id=".$_SESSION['idCompra']."' method='post'>
+                                    <h4>Acréscimo R$<input id='inputDesconto' name= 'acres' class='buttonGen' type='number'></h4>
+                                    <input class='buttonGen' type='submit' value='Comprar'>
+                                </form>
+                            </div>
                                     ";
                                     header("location: carrinho.php");
                     }
@@ -264,11 +268,15 @@
                            echo"
                            </div>
                            <div class='finalizamento'>
-                                    <h3>Total</h3>
-                                    <h4>Valor To: <span>".$total."</span></h4>
-                                    <h4>Status da Compra <span>".$status."</span></h4>
-                                    <input class='buttonGen' onclick='finalizarCompra(11, ".$_SESSION['idCompra'].")' type='button' value='Comprar'>
-                                </div>
+                                <h2>Total</h2>
+                                <h4>Valor Total: <span>".$total."</span></h4>
+                                <h4>Status da Compra <span>".$status."</span></h4>
+                                
+                                <form action='finalizarCompra.php?id=".$_SESSION['idCompra']."' method='post'>
+                                    <h4>Acréscimo R$<input id='inputDesconto' name= 'acres' class='buttonGen' type='number'></h4>
+                                    <input class='buttonGen' type='submit' value='Comprar'>
+                                </form>
+                            </div>
                                 ";
                         
                     }
@@ -326,11 +334,15 @@
                         echo"
                            </div>
                            <div class='finalizamento'>
-                                    <h3>Total</h3>
-                                    <h4>Valor To: <span>".$total."</span></h4>
-                                    <h4>Status da Compra <span>".$status."</span></h4>
-                                    <input class='buttonGen' onclick='finalizarCompra(11, ".$_SESSION['idCompra'].")' type='button' value='Comprar'>
-                                </div>
+                                <h2>Total</h2>
+                                <h4>Valor Total: <span>".$total."</span></h4>
+                                <h4>Status da Compra <span>".$status."</span></h4>
+                                
+                                <form action='finalizarCompra.php?id=".$_SESSION['idCompra']."' method='post'>
+                                    <h4>Acréscimo R$<input id='inputDesconto' name= 'acres' class='buttonGen' type='number'></h4>
+                                    <input class='buttonGen' type='submit' value='Comprar'>
+                                </form>
+                            </div>
                                 ";
                 }
                 //$compp = $id;
@@ -452,11 +464,15 @@
                            
                            </div>
                            <div class='finalizamento'>
-                                    <h3>Total</h3>
-                                    <h4>Valor To: <span>".$total."</span></h4>
-                                    <h4>Status da Compra <span>".$status."</span></h4>
-                                    <input class='buttonGen' onclick='finalizarCompra(11, ".$_SESSION['idCompra'].")' type='button' value='Comprar'>
-                                </div>
+                                <h2>Total</h2>
+                                <h4>Valor Total: <span>".$total."</span></h4>
+                                <h4>Status da Compra <span>".$status."</span></h4>
+                                
+                                <form action='finalizarCompra.php?id=".$_SESSION['idCompra']."' method='post'>
+                                    <h4>Acréscimo R$<input id='inputDesconto' name= 'acres' class='buttonGen' type='number'></h4>
+                                    <input class='buttonGen' type='submit' value='Comprar'>
+                                </form>
+                            </div>
                                 ";
                         
             } // se não houver um produto sendo recebido apenas apresenta oq já tem na compra
@@ -509,7 +525,7 @@
                         echo"
                         </div>
                         <div class='finalizamento'>
-                                <h3>Total</h3>
+                                <h2>Total</h2>
                                 <h4>Valor Total: <span>".$total."</span></h4>
                                 <h4>Status da Compra <span>".$status."</span></h4>
                                 
