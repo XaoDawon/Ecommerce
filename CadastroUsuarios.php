@@ -74,7 +74,8 @@
                             $id= $linha['id_usuario'];
                         }
                         $_SESSION['sessaoUsuario'] = $id; //insere o id do usuário cadastrado em uma variável global
-                        echo"<br><a href='perfil.php?id=".$id."'>Meus Dados</a>"; 
+                        echo"<br><a href='perfil.php?id=".$id."'>Meus Dados</a>";
+                        header("location: perfil.php");
                     
                     }
                 }  
