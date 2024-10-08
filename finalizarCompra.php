@@ -121,6 +121,7 @@ $compra = $_GET['id'];
         
     }
 }
+include('rodape.php');
 
         
 ?>
