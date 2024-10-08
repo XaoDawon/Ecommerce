@@ -17,8 +17,9 @@ include('util.php');
 
         <input type='submit' id='submit' value='Salvar'>
         </form>
+        <center><button class='btCadastro' onclick='mudarTela(3)'>Ainda não possui conta?</button></center>
         </div>
-        </main>";
+        </main>"; //Nesse button que leva para o cadastrar usuário, ele precisa ficar igual ao botão salvar, que está acima do mesmo
         include('rodape.php');
     if($_POST){
         $email = $_POST['email'];
@@ -40,7 +41,7 @@ include('util.php');
             $select = $conn->prepare($varSQL);
             $select->bindParam(':email', $email);
             $select->execute();
-            while($linha = $select->fetch()){
+            while($linha = $select->fetch()){ 
                 $id= $linha['id_usuario'];
             }
             $_SESSION['sessaoUsuario'] = $id; //insere o id do usuário logado em uma variável global
