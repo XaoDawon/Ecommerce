@@ -1,5 +1,5 @@
 <footer>
-            <div class="a"><center>
+            <div class="a"><center><br>
                 DESENVOLVEDORES<br><br>
                 Eduardo Martinez Pereira, n°8<br>
                 João Pedro Rodrigues Arruda Campos, n°15<br>
@@ -8,20 +8,14 @@
                 Rafaela Pinal de Mello, n°30<br>
                 Vinicius De Araujo Rossi, n°34<br></center>
             </div>
-            <div class="a"><center>
+            <div class="a"><center><br>
                 Instagram: @Festum__</center>
             </div>
-            <div class="a"><center>
+            <div class="a"><center><br>
                 Copyright © Festum 2024. Todos os direitos reservados.</center>
             </div> 
         </footer> 
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> 
-<<<<<<< HEAD
         <script src='./js/index.js'></script>
     </body>
 </html>
-=======
-        <script src='./js/index.js'></script>  
-    </body>
-</html>
->>>>>>> f405786b669a410c6fee35b76fa3ddaed884e069

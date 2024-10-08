@@ -10,10 +10,10 @@
         <input type='text' name='nome' placeholder='Digite seu nome'><br>
 
 
-        <input type='text' name='email' placeholder='Digite seu email'><br> 
+        <input type='text' name='email' placeholder='Digite seu email'><br>
 
         <input type='password' name='senha' placeholder='Digite sua senha'><br>
-        <input type='text'  name='telefone' placeholder='Digite seu telefone'><br><br>
+        <input type='text'  name='telefone' placeholder='Digite seu telefone'><br><br><br>
 
         <input type='submit' id='submit' value='Salvar'>
         </form>

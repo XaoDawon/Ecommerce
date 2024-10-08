@@ -23,7 +23,7 @@
     </p><br>
     <p class="pSobre">Missão: “Espalhar cor e alegria para as festas dos clientes.”<br><br>
 Visão: “Ser uma marca de referência em qualidade e empenho, frente aos demais.”<br><br>
-Valores: “Inovação, Atendimento, Comprometimento e Empenho”<br><br></p><hr>
+Valores: “Inovação, Atendimento, Comprometimento e Empenho”<br><br></p><hr><br>
 
 <h2 class="pSobre">Desenvolvedores:</h2><br>
 

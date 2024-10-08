@@ -17,7 +17,7 @@ include('util.php');
 
         <input type='submit' id='submit' value='Salvar'>
         </form>
-        <center><button class='btCadastro' onclick='mudarTela(3)'>Ainda não possui conta?</button></center>
+        <input style='width: 12.53vw; height:3vh;font-size:1.75vh;text-align:center; ' class='buttonGen' onclick='mudarTela(3)' value='Ainda não possui conta?'>
         </div>
         </main>"; //Nesse button que leva para o cadastrar usuário, ele precisa ficar igual ao botão salvar, que está acima do mesmo
         include('rodape.php');
