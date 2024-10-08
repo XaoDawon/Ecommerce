@@ -542,7 +542,7 @@
                                 <h4>Status da Compra <span>".$status."</span></h4>
                                 
                                 <form action='finalizarCompra.php?id=".$_SESSION['idCompra']."' method='post'>
-                                    <h4>Acréscimo R$<input id='inputDesconto' name= 'acres' class='buttonGen' type='number'></h4>
+                                    <h4>Acréscimo R$<input id='inputDesconto' placeholder='0' name= 'acres' class='buttonGen' type='number'></h4>
                                     <input onclick='finalizarCompra' class='buttonGen' id='btComprar' type='submit' value='Comprar'>
                                 </form>
                             </div>

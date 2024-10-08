@@ -9,6 +9,9 @@ $compra = $_GET['id'];
     if($_POST){
 
     $acres = $_POST['acres'];
+    if($acres == null){
+        $acres = 0;
+    }
     $transacao = null;
     
     
