@@ -16,6 +16,12 @@
             </div> 
         </footer> 
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> 
+<<<<<<< HEAD
         <script src='./js/index.js'></script>
     </body>
 </html>
+=======
+        <script src='./js/index.js'></script>  
+    </body>
+</html>
+>>>>>>> f405786b669a410c6fee35b76fa3ddaed884e069
