@@ -147,6 +147,7 @@ button:hover{
 .produto img{
     margin-left: 5%;
     align-self: center;
+    
 }
 #Azul {
   border: 3px solid #037AD5;
@@ -199,4 +200,25 @@ button:hover{
 .a{
     color: rgb(68, 166, 252);
     text-align: justify;
+}
+#login div{
+    border: 3px solid #af178e;
+    border-radius: 2vh;
+    color: #af178e; 
+}
+#registro div{
+    border: 3px solid #af178e;
+    border-radius: 2vh;
+    color: #af178e; 
+}
+#submit{
+    border: 2px solid #81186a;
+
+}
+div input{
+    color: #8f1574;
+}
+div input:hover{
+    border-bottom: 1px solid #af178e;
+    color: #f017c1 ;
 }

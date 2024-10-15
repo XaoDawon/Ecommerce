@@ -41,7 +41,13 @@
             }
 
             if(!$flag){ //aqui ele confere p ver se não tem mesmo o email e segue o código
-                $varSQL = "INSERT INTO usuario (nome, senha, email, telefone)
+                if($_POST['nome'] == null || $_POST['senha'] == null || $_POST['email'] == null || $_POST['telefone'] == null){
+                    echo"
+                        <script> window.alert('Existem valores nulos')</script>
+                    ";
+                }
+                else{
+                    $varSQL = "INSERT INTO usuario (nome, senha, email, telefone)
                 VALUES (:nome, :senha, :email, :telefone)";
 
                 $insert = $conn->prepare($varSQL);
@@ -80,9 +86,11 @@
                     }
                 }  
             }
+            }
             else{
                 echo"<script>alert('Email já cadastrado');</script>";
             }
+                
         }
         include("rodape.php");
 ?>

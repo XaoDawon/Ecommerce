@@ -10,7 +10,7 @@
 <?php
     $conn = conecta();
     echo"
-        <img id='imgAside' src='./images/3 ponto.png' width='40px'>
+        <img id='imgAside' src='./images/3 ponto.png' width='40px' '>
         <div id='divFiltro'>
             <form method='GET' action=''>
             <select name='filtro' id='selectFiltro' >
@@ -52,11 +52,11 @@
             while($linha = $select-> fetch()){
                 echo"
                     <div class='produto' id='".$linha['cor']."'>
-                        <img src='./images/copo".$linha['cor']."normal.jpg' width='34%'>
+                        <img src='./images/copo".$linha['cor']."normal.jpg' width='45%' style='border-radius: 1vh;'>
                         <div>
                             <h3>".$linha['nome']."</h3>
-                            <h3 style='color: rgb(14,153,2);'>R$".$linha['valor_unitario']."</h3>
-                            <input type='button' value='comprar' onclick='btnComprar(".$conected.",".$linha['id_produto'].")'>
+                            <h3 style='color: rgb(14,153,2);'>R$".$linha['valor_unitario']."</h3><br>
+                            <input type='button' value='comprar'   class='buttonGen' id='btComprar".$cor = $linha['cor']."' onclick='btnComprar(".$conected.",".$linha['id_produto'].")'>
                         </div>
                     </div>
                 
@@ -76,11 +76,11 @@
             while($linha = $select-> fetch()){
                 echo"
                     <div class='produto' id='".$linha['cor']."'>
-                        <img src='./images/copo".$linha['cor']."normal.jpg' width='34%'>
+                        <img src='./images/copo".$linha['cor']."normal.jpg' width='45%' style='border-radius: 1vh;'>
                         <div>
                             <h3>".$linha['nome']."</h3>
-                            <h3 style='color: rgb(14,153,2);'>R$".$linha['valor_unitario']."</h3>
-                            <input type='button' value='comprar' onclick='btnComprar( ".$conected.",".$linha['id_produto'].")'>
+                            <h3 style='color: rgb(14,153,2);'>R$".$linha['valor_unitario']."</h3><br>
+                            <input type='button' value='comprar'  class='buttonGen' id='btComprar".$cor = $linha['cor']."' onclick='btnComprar( ".$conected.",".$linha['id_produto'].")'>
                         </div>
                     </div>
                 

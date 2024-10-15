@@ -1,6 +1,3 @@
-
-
-
 <?php
 include('cabecalho.php');
 include('util.php');
@@ -15,16 +12,18 @@ include('util.php');
 
         <input type='password' id='senha' name='senha' placeholder='Digite sua senha'><br><br>
 
-        <input type='submit' id='submit' value='Salvar'>
+        <input type='submit' id='submit' value='Login'>
         </form>
         <input style='width: 12.53vw; height:3vh;font-size:1.75vh;text-align:center; ' class='buttonGen' onclick='mudarTela(3)' value='Ainda não possui conta?'>
         </div>
         </main>"; //Nesse button que leva para o cadastrar usuário, ele precisa ficar igual ao botão salvar, que está acima do mesmo
-        include('rodape.php');
+        
     if($_POST){
         $email = $_POST['email'];
         $senha = $_POST['senha'];
         $admin;
+
+        
 
         $_SESSION['sessaoConectado'] = ValidaLogin($email, $senha, $admin);
         $_SESSION['sessaoAdmin'] = $admin;
@@ -61,4 +60,5 @@ include('util.php');
         
         
     }
+    include('rodape.php');
 ?>
