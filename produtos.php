@@ -63,4 +63,6 @@
         echo" </table>";
         echo"<br><br> <a href='AdicionarProdutos.php?id=".$id_principal."'>Adicionar</a>";
         echo"<br> <p class=C><a href='perfil.php?id=".$id_principal."'>Voltar</a></p>";
+
+        include('rodape.php');
 ?>

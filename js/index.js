@@ -1,12 +1,12 @@
 const tela = ['index.php','sobre.php', 'Login.php', 'CadastroUsuarios.php',
             'perfil.php', 'logout.php', 'carrinho.php', 'AlterarProdutos.php',
             'ExcluirUsuarios.php', 'incluir.php', 'excluir.php', 'finalizarCompra.php',
-            'AlterarUsuarios.php']
+            'AlterarUsuarios.php','produtos.php', 'usuarios.php', 'esqueci.php']
             /*  
                 00 01 02 03 
                 04 05 06 07
                 08 09 10 11
-                12
+                12 13 14 15
             */
 const aside = $("aside")
 const divFiltro = $("#divFiltro")
@@ -51,6 +51,9 @@ function incExCarrinho(num, idProd, idCompra){
     
     window.open(tela[num] + "?id=" +idProd + "&compra=" + idCompra,"_self") 
     
+}
+function admBt(num, idUsuario){
+    window.open(tela[num] + "?id=" +idUsuario ,"_self") 
 }
 
 

@@ -23,25 +23,27 @@
     "
         <main id='registro'>
         <h2 style='color: #d326da;'>Registro</h2>
-        <div>
+        <div style='height:70vh;width:60vh;'>
         <form action='' method='post'>
-        <label for=''>Alterar usuario</label><br>
+        <label for='' style:;>Alterar usuario</label><br>
+        <br>
 
         <label for='nome'>Nome:</label>
-        <input type='text' name='nome' value='$nome'><br><br>
+        <input style='width:60%;' type='text' name='nome' value='$nome'><br><br>
 
         <label for='email'>Email:</label>
-        <input type='text' name='email' value='$email'><br><br> 
+        <input style='width:60%;' type='text' name='email' value='$email'><br><br> 
 
         <label for='senha'>Senha:</label>
-        <input type='text' name='senha' value='$senha'><br><br>
+        <input style='width:59%;' type='text' name='senha' value='$senha'><br><br>
 
         <label for='telefone'>Telefone:</label>
-        <input type='text' name='telefone' value='$telefone'><br><br>
+        <input style='width:56%;' type='text' name='telefone' value='$telefone'><br><br>
 
         <input class='buttonGen' type='submit' value='Salvar'>
         </form>
         </div>
+        </main>
         ";
 
         if ( $_POST ) {
@@ -93,7 +95,7 @@
             else{
                 echo"<script>alert('Email já cadastrado');</script>";
             }
-
+            
         }
         include('rodape.php');
 ?>

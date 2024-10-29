@@ -60,4 +60,5 @@
         }
         echo" </table>";
         echo"<p class=C><a href='perfil.php?id=".$id_principal."'>Voltar</a></p>";
+        include('rodape.php');
 ?>
