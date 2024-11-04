@@ -9,7 +9,7 @@ jobs:
     steps:
     - name: Get latest code
       uses: actions/checkout@v4    
-    - name: Sync files
+    - name: Sync files to server
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: projetoscti.com.br
