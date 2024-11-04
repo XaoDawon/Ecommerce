@@ -31,6 +31,7 @@
     if($adm){
         echo"<input type='button' class='buttonGen' onclick='admBt(14,".$usuario.")' value='Usuarios'>
         <input type='button' class='buttonGen' onclick='admBt(13,".$usuario.")' value='Produtos'>";
+        echo"<br><p class=C><a href='relatorio.php'>Gerar Relatório</a>";
     }
     echo"</div>
                 
