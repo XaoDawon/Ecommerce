@@ -10,7 +10,7 @@
             <html lang='pt-br'>
             <table border='2px'>
             <th>ID da Compra</th><th>Data</th><th>Usuário</th><th>Quantidade</th><th>Total</th>";
-//asdadsd
+
     $nome = "";  
     $qtd = 0;       
     $varSQL = "SELECT * from compra";
