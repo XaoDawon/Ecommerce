@@ -2,7 +2,7 @@
     include("cabecalho.php");
     include("util.php");
     include ("vendor/autoload.php");
-    use Dompdf\Dompdf; 
+    use Dompdf\Dompdf; //aaaaaaa
     $conn = conecta();
     ob_clean();
     ob_start();
