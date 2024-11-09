@@ -302,12 +302,15 @@
         border-top-right-radius: 1vh;
     }
     .buttonGen{
-        width: 7vh;
-        height: 3vh;
+        width: 10vh;
+        height: 5vh;
         border: 1px solid #af178e;
         border-radius: 1vh;
         color: #ad1b89;
         font-size: 1.20vw;
         text-align: center;
+    }
+    .cel{
+        height: auto;
     }
 }

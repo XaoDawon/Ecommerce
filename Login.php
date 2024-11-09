@@ -5,7 +5,7 @@ include('util.php');
     echo"
         <main id='login'>
         <h2 style='color: #d326da;'>Login</h2>
-        <div>
+        <div class='cel'>
         <form method ='post' action=''>
 
         <input type='text' id='email' name='email' placeholder='Digite seu email'><br><br> 
