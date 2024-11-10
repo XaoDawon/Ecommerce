@@ -63,5 +63,5 @@
         echo"<p class=C><a href='perfil.php?id=".$id_principal."'>Voltar</a></p>";
         echo"</main>";
         include('rodape.php');
-    
+    //p
 ?>
