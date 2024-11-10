@@ -17,7 +17,8 @@
         
         $select = $conn->query($varSQL);
 
-        echo"<br><br><p class=C>Produtos</p><br><br><center><table border=1></center>";
+        echo "<main>";
+        echo"<br><br><p class=C>Produtos</p><br><br><table border=1>";
         echo"<th>Id</th><th>Nome</th><th>Descrição</th><th>Preço</th><th>Excluído</th><th>Data de exclusão</th><th>Estoque</th><th>Cor</th><th>Alterar</th><th>Excluir</th>";
         while($linha = $select->fetch())
         {
@@ -63,6 +64,7 @@
         echo" </table>";
         echo"<br><br> <a href='AdicionarProdutos.php?id=".$id_principal."'>Adicionar</a>";
         echo"<br> <p class=C><a href='perfil.php?id=".$id_principal."'>Voltar</a></p>";
+        echo"</main>";
 
         include('rodape.php');
 ?>
