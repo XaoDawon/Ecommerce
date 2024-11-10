@@ -1,7 +1,7 @@
 <?php
 include('cabecalho.php');
 include('util.php');
-//eu gosto de penis
+
     echo"
         <main id='login'>
         <h2 style='color: #d326da;'>Login</h2>
